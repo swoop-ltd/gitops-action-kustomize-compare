@@ -47,7 +47,7 @@ jobs:
       - uses: actions/checkout@v2                                              <-- git checkout helper
       - run: git fetch --unshallow origin master && git checkout ${GITHUB_REF} <-- register origin master as branch to compare to, PLUS checkout current branch 
       - name: +++++ KUSTOMIZE DIFF +++++                                       
-        uses: loveholidays/gitops-action-kustomize-compare@v1.0                <-- use this public github action
+        uses: swoop-ltd/gitops-action-kustomize-compare@v1.0                <-- use this public github action
         with:
           kustomization-location: overlays                                     <-- location of the this-project/overlays/kustomization.yaml
           compare-branch-name: origin/master                                   <-- build code from branched off hash, present in origin/master
