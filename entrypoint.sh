@@ -11,6 +11,8 @@ if [[ -f "$KUSTOMIZATION_DIR_LOCATION" ]] || [ ! -z "$(cd "${KUSTOMIZATION_DIR_L
 
 cd "${KUSTOMIZATION_DIR_LOCATION}"
 
+git config --global --add safe.directory /github/workspace
+
 GIT_TOP_LEVEL_FOLDER=$(git rev-parse --show-toplevel)
 KUSTOMIZATION_DIR_RELATIVE_PATH="$(pwd| sed s+"${GIT_TOP_LEVEL_FOLDER}"/++g)"
 CURRENT_BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
